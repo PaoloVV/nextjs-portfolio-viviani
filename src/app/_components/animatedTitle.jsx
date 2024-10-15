@@ -25,7 +25,7 @@ export default function AnimatedText() {
           key={currentIndex}
           className="absolute top-20 inset-0 text-white  font-bold text-4xl md:text-5xl lg:text-6xl"
           style={{
-            "text-shadow":
+            textShadow:
               "0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4, 0 0 80px #03bcf4, 0 0 160px #03bcf4",
           }}
           initial={{ opacity: 0, y: 20 }}
