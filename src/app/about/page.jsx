@@ -17,10 +17,10 @@ export default function AboutPage() {
           dare una svolta radicale alla mia vita e alla mia carriera. Mi sono
           quindi iscritto al Master di start2Impact-University per lo Sviluppo
           Front-End. La programmazione mi ha affascinato da subito e quindi
-          coniugando studio e lavoro nell'ultimo anno ho appreso varie nozioni
-          di sviluppo web. Ciò che però mi dà la soddisfazione più grande è
-          poter mostrare gli argomenti studiati attraverso diversi progetti
-          pratici realizzati in questi mesi
+          coniugando studio e lavoro nell{`'`}ultimo anno ho appreso varie
+          nozioni di sviluppo web. Ciò che però mi dà la soddisfazione più
+          grande è poter mostrare gli argomenti studiati attraverso diversi
+          progetti pratici realizzati in questi mesi
         </div>
         <div className="w-4/5 lg:w-3/5 xl:w-2/5">
           <Image
