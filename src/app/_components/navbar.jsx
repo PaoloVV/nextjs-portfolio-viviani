@@ -63,7 +63,7 @@ export default function Navbar() {
           href="/"
           className="ring-2 w-fit bg-white p-2 rounded-md italic font-semibold text-midnight"
         >
-          PaolinoDev
+          VivianiDev
         </Link>
       </div>
       {/* RESPONSIVE MENU */}

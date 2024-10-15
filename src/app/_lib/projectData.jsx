@@ -4,7 +4,7 @@ export const projectData = [
     title: "Portfolio",
     subtitle: "HTML & CSS",
     description:
-      "E' lo stesso sito che state visitando in questo momento ma in lingua inglese. Ho utilizzato principalmente HTML e CSS oltre ad alcune funzioni Javascript. Ho anche scelto di utilizzare Bootstrap come framework CSS",
+      "E' il primo portfolio creato ed anche il mio primo progetto. Ho utilizzato principalmente HTML e CSS oltre ad alcune funzioni Javascript. Ho anche scelto di utilizzare Bootstrap come framework CSS",
     url: "https://paolovv.github.io/ProgettoHtmlCss-paoloViviani/",
     image: "/sito-portfolio-inglese.png",
   },

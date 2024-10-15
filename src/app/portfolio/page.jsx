@@ -49,7 +49,6 @@ export default function Portfolio() {
           {projects.map((project) => (
             <div
               className="w-3/4 max-w-96"
-              href="#"
               key={project.id}
               onMouseOut={() => setHoverCard(null)}
               onMouseOver={() => setHoverCard(project.id)}
