@@ -6,17 +6,25 @@ import emailjs from "@emailjs/browser";
 export default function Contact() {
   const [inputNameValue, setInputNameValue] = useState("");
   const [emailInput, setEmailInput] = useState("");
+  const [messageInput, setMessageInput] = useState("");
   const isValidEmail = emailInput.includes("@") && emailInput.length > 0;
   const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
   const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
   const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+  const [successMail, setSuccessMail] = useState(null);
   const form = useRef();
 
   function handleChangeName(e) {
     setInputNameValue(e.target.value);
+    setSuccessMail(null);
   }
   function handleEmailChange(e) {
     setEmailInput(e.target.value);
+    setSuccessMail(null);
+  }
+  function handleMessageChange(e) {
+    setMessageInput(e.target.value);
+    setSuccessMail(null);
   }
   function sendEmail(e) {
     e.preventDefault();
@@ -24,9 +32,15 @@ export default function Contact() {
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       (response) => {
         console.log("success!", response);
+        setMessageInput("");
+        setEmailInput("");
+        setInputNameValue("");
+        setSuccessMail(true);
+        form.current.reset();
       },
       (error) => {
         console.log("FAILED...", error.text);
+        setSuccessMail(false);
       }
     );
   }
@@ -100,14 +114,24 @@ export default function Contact() {
             name="message"
             id="message"
             rows="7"
+            onChange={handleMessageChange}
           ></textarea>
         </div>
         {/* CONFIRM MESSAGE */}
-        <div className={`hidden`}>Messaggio conferma</div>
+        <div className="">
+          {successMail == true && (
+            <div className="text-green-600">
+              Messaggio inviato correttamente!
+            </div>
+          )}
+          {successMail == false && (
+            <div className="text-red-600">Messaggio non inviato!</div>
+          )}
+        </div>
         {/* SUBMIT BUTTON */}
         <div>
           <button
-            className="p-3 bg-midnight hover:bg-white hover:ring-1 hover:ring-white active:bg-white active:text-midnight text-white hover:text-midnight font-semibold rounded-md hover:shadow-neonWhite20"
+            className="p-3 bg-midnight md:hover:bg-white md:hover:ring-1 md:hover:ring-white active:bg-white active:text-midnight text-white md:hover:text-midnight font-semibold rounded-md md:hover:shadow-neonWhite20"
             type="submit"
           >
             Invia Messaggio
